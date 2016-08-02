@@ -18,11 +18,7 @@ Column {
             }
         }
 
-        onPerformedGood: {
-            setTimeout( function() {
-                risovanie.activate( outputDeed );
-            }, 500 );
-        }
+        activateDlg: true
     }
 
     TracingDeeds { input: it; bonus: false }
