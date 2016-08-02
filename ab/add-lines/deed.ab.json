@@ -1,0 +1,80 @@
+﻿{
+  "title": "Добавить отрезки",
+  "help": "",
+  "icon": "",
+  "chain": [
+    {
+      "ability": "create-robot",
+      "input": "/Scene",
+      "nameinchain": "/add-lines/create-robot",
+      "initParams": {
+        "type": "Lines"
+      }
+    },
+    {
+      "ability": "positions-as-array2d",
+      "input": "/add-lines/create-robot/Lines",
+      "nameinchain": "/add-lines/create-robot/positions-as-array2d",
+      "initParams": {
+        "pri-izmenenii-massiva-peredavat-znacheniya-obratno-v-positions": 1
+      }
+    },
+    {
+      "ability": "array2d-edit",
+      "input": "/add-lines/create-robot/positions-as-array2d/Array2dRobot",
+      "nameinchain": "/add-lines/create-robot/positions-as-array2d/array2d-edit",
+      "initParams": {
+        "text": "0 0 0\n0 1 1\n0 0 0\n-1 5 2\n0 0 1\n-3 -3 -2\n"
+      }
+    },
+    {
+      "ability": "manage-object-color",
+      "input": "/add-lines/create-robot/Lines",
+      "nameinchain": "/add-lines/create-robot/manage-object-color",
+      "initParams": {
+        "cvet": "1 0.35 0.35"
+      }
+    },
+    {
+      "ability": "create-interface-o",
+      "input": "/add-lines/create-robot",
+      "nameinchain": "/add-lines/create-robot/create-interface-o"
+    },
+    {
+      "ability": "add-param-to-interface",
+      "input": "/add-lines/create-robot/create-interface-o/Interface",
+      "nameinchain": "/add-lines/create-robot/create-interface-o/add-param-to-interface",
+      "initParams": {
+        "objref": "/add-lines/create-robot/positions-as-array2d/array2d-edit",
+        "guid": "text"
+      }
+    },
+    {
+      "ability": "add-param-to-interface",
+      "input": "/add-lines/create-robot/create-interface-o/Interface",
+      "nameinchain": "/add-lines/create-robot/create-interface-o/add-param-to-interface#2",
+      "initParams": {
+        "objref": "/add-lines/create-robot/manage-object-color",
+        "guid": "cvet"
+      }
+    },
+    {
+      "ability": "add-tdeed-to-interface",
+      "input": "/add-lines/create-robot/create-interface-o/Interface",
+      "nameinchain": "/add-lines/create-robot/create-interface-o/add-tdeed-to-interface",
+      "initParams": {
+        "objref": "/add-lines/create-robot/Lines",
+        "guid": "lines-to-cylinders"
+      }
+    },
+    {
+      "ability": "add-tdeed-to-interface",
+      "input": "/add-lines/create-robot/create-interface-o/Interface",
+      "nameinchain": "/add-lines/create-robot/create-interface-o/add-tdeed-to-interface#2",
+      "initParams": {
+        "objref": "/add-lines/create-robot/Lines",
+        "guid": "lines-to-arrows"
+      }
+    }
+  ]
+}

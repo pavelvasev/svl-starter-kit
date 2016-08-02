@@ -1,0 +1,48 @@
+Column {
+  property alias file: c1.file
+
+PerformDeedButton {
+  text: c1.output.title
+  name: c1.output.name
+  parentToObject: true
+  record: true
+
+  id: it
+
+  ChainLoader {
+    id: c1
+    output.category: "hidden"
+    output.name: {
+      var dirs = (c1.file || "").split("/");
+      return dirs[ dirs.length - 2];
+    }
+  }
+
+  ChainLoader {
+    id: c1gui
+    output.category: "hidden"
+    output.name: c1.output.name + "-gui"
+    file: (c1.file || "").replace("deed.ab.json","gui.ab.json")
+  }
+
+  onPerformedGood: {
+    // if (!outputDeed.icon) outputDeed.icon = outputDeed.ability.title;
+    // теперь зацепим еще цепочку.. хм..
+    var firstDeedInChain = outputDeed && outputDeed.createdDeeds && outputDeed.createdDeeds.items ? outputDeed.createdDeeds.items[0] : null;
+
+    outputDeed.go( c1gui.output.chain, 0, firstDeedInChain ); 
+
+    //var gui = c1gui.output;
+    //var guideed; if (gui && firstDeedInChain) guideed = gui.act( firstDeedInChain,{},firstDeedInChain );
+    
+    setTimeout( function() { 
+      //if (guideed) console.log("assigning params... guideed.params=",guideed.params);
+      // if (guideed) outputDeed.params = guideed.params;
+      risovanie.activate( outputDeed );
+    }, 500 );
+  }
+}
+
+ TracingDeeds { input: it; bonus: false }
+
+}

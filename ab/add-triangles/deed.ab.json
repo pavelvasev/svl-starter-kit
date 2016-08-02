@@ -1,0 +1,70 @@
+﻿{
+  "title": "Добавить треугольники",
+  "help": "",
+  "icon": "",
+  "chain": [
+    {
+      "ability": "create-robot",
+      "input": "/Scene",
+      "nameinchain": "/add-triangles#2/create-robot",
+      "initParams": {
+        "type": "Triangles"
+      }
+    },
+    {
+      "ability": "positions-as-array2d",
+      "input": "/add-triangles#2/create-robot/Triangles",
+      "nameinchain": "/add-triangles#2/create-robot/positions-as-array2d",
+      "initParams": {
+        "pri-izmenenii-massiva-peredavat-znacheniya-obratno-v-positions": 1
+      }
+    },
+    {
+      "ability": "array2d-edit",
+      "input": "/add-triangles#2/create-robot/positions-as-array2d/Array2dRobot",
+      "nameinchain": "/add-triangles#2/create-robot/positions-as-array2d/array2d-edit",
+      "initParams": {
+        "text": "0 0 0 0 5 0 -2 3 1\n0 0 0 2 7 2 7 4 1\n"
+      }
+    },
+    {
+      "ability": "manage-object-color",
+      "input": "/add-triangles#2/create-robot/Triangles",
+      "nameinchain": "/add-triangles#2/create-robot/manage-object-color",
+      "initParams": {
+        "cvet": "0.2 0.45 0.13"
+      }
+    },
+    {
+      "ability": "create-interface-o",
+      "input": "/add-triangles#2/create-robot",
+      "nameinchain": "/add-triangles#2/create-robot/create-interface-o"
+    },
+    {
+      "ability": "add-param-to-interface",
+      "input": "/add-triangles#2/create-robot/create-interface-o/Interface",
+      "nameinchain": "/add-triangles#2/create-robot/create-interface-o/add-param-to-interface",
+      "initParams": {
+        "objref": "/add-triangles#2/create-robot/positions-as-array2d/array2d-edit",
+        "guid": "text"
+      }
+    },
+    {
+      "ability": "add-text-to-interface",
+      "input": "/add-triangles#2/create-robot/create-interface-o/add-param-to-interface",
+      "nameinchain": "/add-triangles#2/create-robot/create-interface-o/add-param-to-interface/add-text-to-interface",
+      "initParams": {
+        "text": "Укажите координаты вершин треугольников.\n1 строка = 1 треугольник, 9 чисел."
+      }
+    },
+    {
+      "ability": "add-param-to-interface",
+      "input": "/add-triangles#2/create-robot/create-interface-o/Interface",
+      "nameinchain": "/add-triangles#2/create-robot/create-interface-o/add-param-to-interface#2",
+      "initParams": {
+        "objref": "/add-triangles#2/create-robot/manage-object-color",
+        "guid": "cvet"
+      }
+    }
+  ]
+}

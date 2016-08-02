@@ -1,0 +1,62 @@
+﻿{
+  "title": "Добавить точки",
+  "help": "",
+  "icon": "",
+  "chain": [
+    {
+      "ability": "create-robot",
+      "input": "/Scene",
+      "nameinchain": "/add-points/create-robot",
+      "initParams": {
+        "type": "Points"
+      }
+    },
+    {
+      "ability": "positions-as-array2d",
+      "input": "/add-points/create-robot/Points",
+      "nameinchain": "/add-points/create-robot/positions-as-array2d",
+      "initParams": {
+        "pri-izmenenii-massiva-peredavat-znacheniya-obratno-v-positions": 1
+      }
+    },
+    {
+      "ability": "array2d-edit",
+      "input": "/add-points/create-robot/positions-as-array2d/Array2dRobot",
+      "nameinchain": "/add-points/create-robot/positions-as-array2d/array2d-edit",
+      "initParams": {
+        "text": "3 2 7\n-5 4 3\n7 15 2\n3 3 -5\n1 2 3\n"
+      }
+    },
+    {
+      "ability": "manage-object-radius",
+      "input": "/add-points/create-robot/Points",
+      "nameinchain": "/add-points/create-robot/manage-object-radius",
+      "initParams": {
+        "Radius": 1
+      }
+    },
+    {
+      "ability": "create-interface-o",
+      "input": "/add-points/create-robot",
+      "nameinchain": "/add-points/create-robot/create-interface-o"
+    },
+    {
+      "ability": "add-param-to-interface",
+      "input": "/add-points/create-robot/create-interface-o/Interface",
+      "nameinchain": "/add-points/create-robot/create-interface-o/add-param",
+      "initParams": {
+          "guid": "Radius",
+          "objref": "/add-points/create-robot/manage-object-radius"
+      }
+    },
+    {
+      "ability": "add-param-to-interface",
+      "input": "/add-points/create-robot/create-interface-o/Interface",
+      "nameinchain": "/add-points/create-robot/create-interface-o/add-param#2",
+      "initParams": {
+          "guid": "text",
+          "objref": "/add-points/create-robot/positions-as-array2d/array2d-edit"
+      }
+    }
+  ]
+}

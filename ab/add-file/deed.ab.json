@@ -1,0 +1,48 @@
+{
+  "title": "Добавить файл",
+  "help": "",
+  "icon": "",
+  "chain": [
+    {
+      "ability": "create-robot",
+      "input": "/Scene",
+      "nameinchain": "/add-file/create-robot",
+      "initParams": {
+        "type": "FileRobot"
+      }
+    },
+    {
+      "ability": "create-interface-o",
+      "input": "/add-file/create-robot",
+      "nameinchain": "/add-file/create-robot/create-interface-o"
+    },
+    {
+      "ability": "add-param-to-interface",
+      "input": "/add-file/create-robot/create-interface-o/Interface",
+      "nameinchain": "/add-file/create-robot/create-interface-o/add-param-to-interface",
+      "initParams": {
+        "objref": "/add-file/create-robot/FileRobot",
+        "guid": "file"
+      }
+    },
+    {
+      "ability": "add-tdeed-to-interface",
+      "input": "/add-file/create-robot/create-interface-o/Interface",
+      "nameinchain": "/add-file/create-robot/create-interface-o/add-tdeed-to-interface",
+      "initParams": {
+        "objref": "/add-file/create-robot/FileRobot",
+        "guid": "file-to-array2d"
+      }
+    },
+    {
+      "ability": "add-tdeed-to-interface",
+      "input": "/add-file/create-robot/create-interface-o/Interface",
+      "nameinchain": "/add-file/create-robot/create-interface-o/add-tdeed-to-interface#2",
+      "initParams": {
+        "title": "Показать строки файла как точки",
+        "objref": "/add-file/create-robot/FileRobot",
+        "guid": "file-to-points"
+      }
+    }
+  ]
+}

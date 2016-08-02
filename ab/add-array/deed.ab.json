@@ -1,0 +1,60 @@
+{
+  "title": "Добавить массив",
+  "help": "",
+  "icon": "",
+  "chain": [
+    {
+      "ability": "create-robot",
+      "input": "/Scene",
+      "nameinchain": "/add-array/create-robot",
+      "initParams": {
+        "type": "Array2dRobot"
+      }
+    },
+    {
+      "ability": "array2d-edit",
+      "input": "/add-array/create-robot/Array2dRobot",
+      "nameinchain": "/add-array/create-robot/array2d-edit"
+    },
+    {
+      "ability": "create-interface-o",
+      "input": "/add-array/create-robot",
+      "nameinchain": "/add-array/create-robot/create-interface-o"
+    },
+    {
+      "ability": "add-param-to-interface",
+      "input": "/add-array/create-robot/create-interface-o/Interface",
+      "nameinchain": "/add-array/create-robot/create-interface-o/add-param-to-interface",
+      "initParams": {
+        "objref": "/add-array/create-robot/array2d-edit",
+        "guid": "text"
+      }
+    },
+    {
+      "ability": "add-text-to-interface",
+      "input": "/add-array/create-robot/create-interface-o/add-param-to-interface",
+      "nameinchain": "/add-array/create-robot/create-interface-o/add-param-to-interface/add-text-to-interface",
+      "initParams": {
+        "text": "Укажите содержание двумерного массива."
+      }
+    },
+    {
+      "ability": "add-tdeed-to-interface",
+      "input": "/add-array/create-robot/create-interface-o/Interface",
+      "nameinchain": "/add-array/create-robot/create-interface-o/add-tdeed-to-interface",
+      "initParams": {
+        "objref": "/add-array/create-robot/Array2dRobot",
+        "guid": "zagruzit-iz-faila"
+      }
+    },
+    {
+      "ability": "add-tdeed-to-interface",
+      "input": "/add-array/create-robot/create-interface-o/Interface",
+      "nameinchain": "/add-array/create-robot/create-interface-o/add-tdeed-to-interface#2",
+      "initParams": {
+        "objref": "/add-array/create-robot/Array2dRobot",
+        "guid": "compute-array"
+      }
+    }
+  ]
+}

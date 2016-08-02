@@ -1,0 +1,106 @@
+﻿{
+  "title": "Добавить сферы",
+  "help": "",
+  "icon": "",
+  "chain": [
+    {
+      "ability": "create-robot",
+      "input": "/Scene",
+      "nameinchain": "/add-spheres/create-robot",
+      "initParams": {
+        "type": "Spheres"
+      }
+    },
+    {
+      "ability": "positions-as-array2d",
+      "input": "/add-spheres/create-robot/Spheres",
+      "nameinchain": "/add-spheres/create-robot/positions-as-array2d",
+      "initParams": {
+        "pri-izmenenii-massiva-peredavat-znacheniya-obratno-v-positions": 1
+      }
+    },
+    {
+      "ability": "array2d-edit",
+      "input": "/add-spheres/create-robot/positions-as-array2d/Array2dRobot",
+      "nameinchain": "/add-spheres/create-robot/positions-as-array2d/array2d-edit",
+      "initParams": {
+        "text": "0 1 0\n2 1 5\n2 5 3\n4 -2 7\n7 2 7\n"
+      }
+    },
+    {
+      "ability": "manage-object-radius",
+      "input": "/add-spheres/create-robot/Spheres",
+      "nameinchain": "/add-spheres/create-robot/manage-object-radius",
+      "initParams": {
+        "Radius": 4.7
+      }
+    },
+    {
+      "ability": "manage-object-color",
+      "input": "/add-spheres/create-robot/Spheres",
+      "nameinchain": "/add-spheres/create-robot/manage-object-color",
+      "initParams": {
+        "cvet": "0.71 1 0.27"
+      }
+    },
+    {
+      "ability": "create-interface-o",
+      "input": "/add-spheres/create-robot",
+      "nameinchain": "/add-spheres/create-robot/create-interface-o"
+    },
+    {
+      "ability": "add-param-to-interface",
+      "input": "/add-spheres/create-robot/create-interface-o/Interface",
+      "nameinchain": "/add-spheres/create-robot/create-interface-o/add-param-to-interface",
+      "initParams": {
+          "guid": "text",
+          "objref": "/add-spheres/create-robot/positions-as-array2d/array2d-edit"
+      }
+    },
+    {
+      "ability": "add-text-to-interface",
+      "input": "/add-spheres/create-robot/create-interface-o/add-param-to-interface",
+      "nameinchain": "/add-spheres/create-robot/create-interface-o/add-param-to-interface/add-text-to-interface",
+      "initParams": {
+        "text": "Укажите координаты центров сфер, по 3 числа в строке"
+      }
+    },
+    {
+      "ability": "add-param-to-interface",
+      "input": "/add-spheres/create-robot/create-interface-o/Interface",
+      "nameinchain": "/add-spheres/create-robot/create-interface-o/add-param-to-interface#2",
+      "initParams": {
+          "guid": "Radius",
+          "objref": "/add-spheres/create-robot/manage-object-radius"
+      }
+    },
+    {
+      "ability": "add-param-to-interface",
+      "input": "/add-spheres/create-robot/create-interface-o/Interface",
+      "nameinchain": "/add-spheres/create-robot/create-interface-o/add-param-to-interface#3",
+      "initParams": {
+          "guid": "cvet",
+          "objref": "/add-spheres/create-robot/manage-object-color"
+      }
+    },
+    {
+      "ability": "add-tdeed-to-interface",
+      "input": "/add-spheres/create-robot/create-interface-o/Interface",
+      "nameinchain": "/add-spheres/create-robot/create-interface-o/add-tdeed-to-interface",
+      "initParams": {
+        "title": "Показать триангуляцию сфер",
+          "guid": "trimesh2lines",
+          "objref": "/add-spheres/create-robot/Trimesh"
+      }
+    },
+    {
+      "ability": "add-tdeed-to-interface",
+      "input": "/add-spheres/create-robot/create-interface-o/Interface",
+      "nameinchain": "/add-spheres/create-robot/create-interface-o/add-tdeed-to-interface#2",
+      "initParams": {
+          "guid": "manage-object-opacity",
+          "objref": "/add-spheres/create-robot/Spheres"
+      }
+    }
+  ]
+}
