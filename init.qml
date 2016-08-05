@@ -1,9 +1,10 @@
-Item {
+Robot {
 
    VisibleParam {
      text: "Начальные действия"
      target: co
      tag: "right"
+     guid: "buttons-visible"
      width: 180
    }
 
@@ -13,31 +14,31 @@ Item {
      spacing: 5
 
      AddItem {
-       file: Qt.resolvedUrl( "ab/add-spheres/deed.ab.json")
+       name: "add-spheres"
+       title: "Добавить сферы"
      }
      AddItem {
-       file: Qt.resolvedUrl( "ab/add-points/deed.ab.json")
+       name: "add-points"
+       title: "Добавить точки"
      }
      AddItem {
-       file: Qt.resolvedUrl( "ab/add-lines/deed.ab.json")
+       name: "add-lines"
+       title: "Добавить отрезки"
      }
      AddItem {
-       file: Qt.resolvedUrl( "ab/add-triangles/deed.ab.json")
+       name: "add-triangles"
+       title: "Добавить треугольники"
      }
      Text {
        text: " "
      }
      AddItem {
-       file: Qt.resolvedUrl( "ab/add-file/deed.ab.json")
+       name: "add-file"
+       title: "Добавить файл"
      }
      AddItem {
-       file: Qt.resolvedUrl( "ab/add-array/deed.ab.json")
+       name: "add-array"
+       title: "Добавить массив"
      }
    }
-
-   /*
-   PerformDeed {
-     name: "load-ability"
-     input: Qt.resolvedUrl( "ab/interfaces/tri.ab.json")
-   }*/
 }

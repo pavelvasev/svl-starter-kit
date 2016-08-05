@@ -32,7 +32,7 @@
       "input": "/add-spheres/create-robot/Spheres",
       "nameinchain": "/add-spheres/create-robot/manage-object-radius",
       "initParams": {
-        "Radius": 4.7
+        "Radius": 1.7
       }
     },
     {
