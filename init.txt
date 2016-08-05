@@ -1,7 +1,7 @@
+init.qml
 starter-kit/add-array.ab.json
 starter-kit/add-file.ab.json
 starter-kit/add-lines.ab.json
 starter-kit/add-points.ab.json
 starter-kit/add-spheres.ab.json
 starter-kit/add-triangles.ab.json
-init.qml

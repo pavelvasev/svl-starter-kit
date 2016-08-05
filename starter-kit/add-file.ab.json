@@ -2,6 +2,8 @@
   "title": "Добавить файл",
   "help": "",
   "icon": "",
+  "extraFeel" : "obj.$class == 'Scene'",
+  "category" : "starter-kit",
   "chain": [
     {
       "ability": "create-robot",

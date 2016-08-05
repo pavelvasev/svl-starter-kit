@@ -1,12 +1,25 @@
 Robot {
 
    VisibleParam {
+     id: vp
+     //text: "Показать кнопки начальных действий"
+     //width: 250
+
      text: "Начальные действия"
+     width: 180
+
      target: co
      tag: "right"
      guid: "buttons-visible"
-     width: 180
    }
+
+   /*
+   params: [vp2]
+   Item {
+     id: vp2
+     property var guid: "buttons-visible"
+     property alias value: vp.value
+   }*/
 
    Column {
      id: co
